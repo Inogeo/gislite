@@ -1,0 +1,15 @@
+version: "3"
+services:
+  gislite:
+    image: "node:16"
+    user: "node"
+    working_dir: /home/node/app/gislite
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - ./app:/home/node/app
+    expose:
+      - "3000"
+    ports:
+      - "3000:3000"
+    command: "npm start"
